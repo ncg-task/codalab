@@ -1,0 +1,47 @@
+<h3 style="text-align: justify;">SemEval-2021 Shared Task 11: <span style="font-variant: small-caps;">NLPContributionGraph</span></h3>
+<h4 style="text-align: justify;">Structuring Scholarly NLP Contributions in the Open Research Knowledge Graph</h4>
+<p style="text-align: justify;">The <span style="font-variant: small-caps;">NLPContributionGraph</span> Shared Task is introduced as Shared Task 11 at SemEval-2021 for the first time. It focuses on the shallow semantic structuring of contributions in scholarly publications in the domain of Natural Language Processing research such that the structured contributions are integrable within the <a href="https://www.orkg.org/orkg/" target="_blank">Open Research Knowledge Graph</a>. The data will be drawn from the NLP component of the publicly available leaderboard of tasks in artificial intelligence called <a href="https://paperswithcode.com/" target="_blank">https://paperswithcode.com/</a>.</p>
+<h3 style="text-align: justify;">Subtasks</h3>
+<p style="text-align: justify;"><span style="font-variant: small-caps;">NLPContributionGraph</span>&nbsp;systems will be asked to extract the following information:</p>
+<ul style="text-align: justify;">
+<li>Sentences: identifying the sentences that reflect the contribution of the scholarly article</li>
+<li>Entities: From the sentences that reflect the contribution of the scholarly article, to identify the entities, their spans in particular, that will be used in building the knowledge graph nodes within subject-predicate-object triple statements</li>
+<li>Triples: create subject-predicate-object triple statements from the entities extracted earlier and organize them within any of the following information units<br />
+<ul>
+<li><span style="font-variant: small-caps;">ResearchProblem</span>, <span style="font-variant: small-caps;">Approach</span>, <span style="font-variant: small-caps;">Model</span>, <span style="font-variant: small-caps;">Method</span>, <span style="font-variant: small-caps;">Architecture</span>, <span style="font-variant: small-caps;">System</span>, <span style="font-variant: small-caps;">Application</span>, <span style="font-variant: small-caps;">Objective</span>, <span style="font-variant: small-caps;">ExperimentalSetup</span>, <span style="font-variant: small-caps;">Hyperparameters</span>, <span style="font-variant: small-caps;">Results</span>, <span style="font-variant: small-caps;">Tasks</span>, <span style="font-variant: small-caps;">Experiments</span>, <span style="font-variant: small-caps;">AblationAnalysis</span>, and <span style="font-variant: small-caps;">Baselines</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">For example, given the article:</p>
+<blockquote>
+<p class="wi-article-title article-title-main"><a href="https://doi.org/10.1093/bioinformatics/btz682" target="_blank">BioBERT: a pre-trained biomedical language representation model for biomedical text mining</a></p>
+</blockquote>
+<p style="text-align: justify;">Systems should identify:</p>
+<ul style="text-align: justify;">
+<li>Sentence:
+<ul>
+<li>We used the BERT<sub><span class="monospace">BASE</span></sub> model pre-trained on English Wikipedia and BooksCorpus for 1M steps.</li>
+</ul>
+</li>
+<li>Entities:
+<ul>
+<li>used</li>
+<li>BERT<sub><span class="monospace">BASE</span></sub> model</li>
+<li>pre-trained on</li>
+<li>English Wikipedia</li>
+<li>BooksCorpus</li>
+<li>for</li>
+<li>1M steps</li>
+</ul>
+</li>
+<li>Triples:
+<ul>
+<li>(<span style="font-variant: small-caps;">Contribution</span>, has, <span style="font-variant: small-caps;">ExperimentalSetup</span>)</li>
+<li>(<span style="font-variant: small-caps;">ExperimentalSetup</span>, used, BERT<sub><span class="monospace">BASE</span></sub> model)</li>
+<li>(BERT<sub><span class="monospace">BASE</span></sub> model, pre-trained on, English Wikipedia)</li>
+<li>(BERT<sub><span class="monospace">BASE</span></sub> model, pre-trained on, BooksCorpus)</li>
+<li>(BERT<sub><span class="monospace">BASE</span></sub> model, for, 1M steps)</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">Note that the above example is only for one contribution-related sentence from the article. The participating systems should identify all the contribution-related sentences and accordingly perform the subsequent Entities and Triples subtasks given the contribution-related sentences.</p>

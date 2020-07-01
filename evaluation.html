@@ -1,0 +1,84 @@
+<p>Participants in NLPContributionGraph may participate in any or all of the 3 tasks (Sentence, Entity, Triples). The evaluation metrics that will be applied are:</p>
+<ul>
+<li>Sentence: precision, recall and F1</li>
+<li>Entity: precision, recall and F1</li>
+<li>Triples: precision, recall and F1 overall and for each attribute</li>
+</ul>
+<p>The focus of NLPContributionGraph is on shallow semantic structuring of the contributions in NLP scholarly articles to form a knowledge graph. To allow a thorough evaluation of systems, NLPContributionGraph will have multiple evaluation phases:</p>
+<ol>
+<li>Practice phase:
+<ul>
+<li>Training and dev data:
+<ul>
+<li>contribution sentences from NLP scholarly articles across different IE tasks (e.g., machine translation, named entity recognition, etc.)</li>
+<li>entities from the annotated contribution sentences</li>
+<li>triples from the entities under any of the fifteen information units listed below</li>
+<ul>
+<li><span style="font-variant: small-caps;">ResearchProblem</span>, <span style="font-variant: small-caps;">Approach</span>, <span style="font-variant: small-caps;">Model</span>, <span style="font-variant: small-caps;">Method</span>, <span style="font-variant: small-caps;">Architecture</span>, <span style="font-variant: small-caps;">System</span>, <span style="font-variant: small-caps;">Application</span>, <span style="font-variant: small-caps;">Objective</span>, <span style="font-variant: small-caps;">ExperimentalSetup</span>, <span style="font-variant: small-caps;">Hyperparameters</span>, <span style="font-variant: small-caps;">Results</span>, <span style="font-variant: small-caps;">Tasks</span>, <span style="font-variant: small-caps;">Experiments</span>, <span style="font-variant: small-caps;">AblationAnalysis</span>, and <span style="font-variant: small-caps;">Baselines</span></li>
+</ul>
+</ul>
+</li>
+<li>Test data:
+<ul>
+<li>In the pratice phase, the test data is the dev set itself with a different set of annotated articles from those chosen as training data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>End-to-end pipeline testing phase:
+<ul>
+<li>Training and dev data:</li>
+<ul>
+<li>Same as in the practice phase; no new data will be released</li>
+</ul>
+<li>Test data:
+<ul>
+<li>Participants will be provided with unannotated articles that are not part of the training or dev set</li>
+<li>The server will host the reference annotations for these articles for participant automated system output evaluations</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Entity and Schema extraction testing phase:<br /> This phase will have two parts: In part 1, the participant systems will be given the gold annotated sentences and will be expected to provide purely their entity extraction output; In part 2, the participant systems will be given the gold entities and will be expected to provide their system output just for triples.
+<ul>
+<li>Training data:
+<ul>
+<li>Same as in the practice phase; no new data will be released</li>
+</ul>
+</li>
+<li>Test data:
+<ul>
+<li>Part 1: Gold annotated contribution sentences</li>
+<li>Part 2: Gold annotated entities from the contribution sentences</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>System Output Format</h3>
+<p>Based on the subtask, the format of submissions is the same for both phase 1 and phase 2. Regardless of the train, dev, or test datasets, the participants will be provided the articles in plain text format and lightly preprocessed in terms of sentence splits and tokenization. For the <strong>Sentence</strong> task, sentence numbers, with a start counter at 1, will be the input data to participating systems and are expected to produce their predictions similarly. For the <strong>Entity</strong> task, the first and last token numbers, where tokens also have a start counter of 1 for each sentence, will be the input and expected output from participants. And finally, for the <strong>Triples</strong> task, triples of the entities as their token numbers, thus six numbers per line, will be the input data and expected output data from the participant systems. The submission directory structure should look like:</p>
+<ul>
+<li>ArticleID01
+<ul>
+<li>Sentence.txt</li>
+<li>Entity.txt</li>
+<li>Triples.txt</li>
+</ul>
+</li>
+<li>ArticleID02<br />
+<ul>
+<li>Sentence.txt</li>
+<li>Entity.txt</li>
+<li>Triples.txt</li>
+</ul>
+</li>
+<li>ArticleID03<br />
+<ul>
+<li>Sentence.txt</li>
+<li>Entity.txt</li>
+<li>Triples.txt</li>
+</ul>
+</li>
+<li>...</li>
+</ul>
+<p>&nbsp;</p>

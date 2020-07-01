@@ -1,0 +1,419 @@
+title: "SemEval 2021 Task 11: NLPContributionGraph Pre-Competition Testing"
+
+html:
+    overview: overview.html
+    evaluation: evaluation.html
+    terms: empty.html
+    data: data.html
+
+image: logo.png    
+    
+has_registration: True
+
+allow_teams: True
+
+force_submission_to_leaderboard: True
+
+phases:
+    1:
+        phasenumber: 1
+        label: "Practice"
+        color: "yellow"
+        start_date: 2020-09-04
+        phase_never_ends: False
+        max_submissions: 999
+        scoring_program: scoring_program.zip
+        reference_data: dev_data.zip
+        force_best_submission_to_leaderboard: True
+    2:
+        phasenumber: 2
+        label: "Evaluation Phase 1: End-to-end Pipeline Testing"
+        color: "green"
+        start_date: 2020-12-03
+        phase_never_ends: False
+        force_best_submission_to_leaderboard: True
+        max_submissions: 10
+        scoring_program: scoring_program.zip
+        reference_data: test_data.zip
+    3:
+        phasenumber: 3
+        label: "Evaluation Phase 2, Part 1: Entity Extraction Testing"
+        color: "green"
+        start_date: 2021-01-03
+        phase_never_ends: False
+        force_best_submission_to_leaderboard: True
+        max_submissions: 10
+        scoring_program: scoring_program.zip
+        reference_data: test_data.zip
+    4:
+        phasenumber: 4
+        label: "Evaluation Phase 2, Part 2: Triples Extraction Testing"
+        color: "green"
+        start_date: 2021-01-17
+        phase_never_ends: False
+        force_best_submission_to_leaderboard: True
+        max_submissions: 10
+        scoring_program: scoring_program.zip
+        reference_data: test_data.zip        
+    5:
+        phasenumber: 5
+        label: "Post-competition"
+        color: "blue"
+        start_date: 2021-01-31
+        phase_never_ends: True
+        force_best_submission_to_leaderboard: True
+        max_submissions_per_day: 10
+        scoring_program: scoring_program.zip
+        reference_data: test_data.zip
+
+leaderboard:
+
+    leaderboards:
+        All: &ALL
+            label: Results
+            rank: 1
+            
+    column_groups:
+        Sentences: &SENT
+            label: Sentences
+        Entities span only: &ENT_SPAN
+            label: Entities span only
+        Triples + all units: &TRIPLES_FULL
+            label: Triples + all units
+        Research problem triples only: &RESEARCH_PROBLEM
+            label: Research problem triples only
+        Approach triples only: &APPROACH
+            label: Approach triples only
+        Model triples only: &MODEL
+            label: Model triples only
+        Method triples only: &METHOD
+            label: Method triples only
+        Architecture triples only: &ARCH
+            label: Architecture triples only
+        System triples only: &SYS
+            label: System triples only
+        Application triples only: &APP
+            label: Application triples only            
+        Objective triples only: &OBJ
+            label: Objective triples only
+        Experimental Setup triples only: &EXP_SETUP
+            label: Experimental Setup triples only
+        Hyperparameters triples only: &HYP_PARAM
+            label: Hyperparameters triples only
+        Results triples only: &RES
+            label: Results triples only
+        Tasks triples only: &TASKS
+            label: Tasks triples only
+        Experiments triples only: &EXP
+            label: Experiments triples only
+        Ablation analysis triples only: &ABL_ANALYSIS
+            label: Ablation analysis triples only
+        Baselines triples only: &BASELINES
+            label: Baselines triples only        
+            
+    columns:
+        SENT_f1:
+            leaderboard: *ALL
+            column_group: *SENT
+            label: F1
+            rank: 1
+        SENT_precision:
+            leaderboard: *ALL
+            column_group: *SENT
+            label: P
+            rank: 2
+        SENT_recall:
+            leaderboard: *ALL
+            column_group: *SENT
+            label: R
+            rank: 3
+            
+        # entities
+        ENT_SPAN_f1:
+            leaderboard: *ALL
+            column_group: *ENT_SPAN
+            label: F1
+            rank: 1
+        ENT_SPAN_precision:
+            leaderboard: *ALL
+            column_group: *ENT_SPAN
+            label: P
+            rank: 2
+        ENT_SPAN_recall:
+            leaderboard: *ALL
+            column_group: *ENT_SPAN
+            label: R
+            rank: 3
+
+        # all triples
+        TRIPLES_f1:
+            leaderboard: *ALL
+            column_group: *TRIPLES_FULL
+            label: F1
+            rank: 1
+        TRIPLES_precision:
+            leaderboard: *ALL
+            column_group: *TRIPLES_FULL
+            label: P
+            rank: 2
+        TRIPLES_recall:
+            leaderboard: *ALL
+            column_group: *TRIPLES_FULL
+            label: R
+            rank: 3
+
+        # only research problem triples
+        RESEARCH_PROBLEM_f1:
+            leaderboard: *ALL
+            column_group: *RESEARCH_PROBLEM
+            label: F1
+            rank: 1
+        RESEARCH_PROBLEM_precision:
+            leaderboard: *ALL
+            column_group: *RESEARCH_PROBLEM
+            label: P
+            rank: 2
+        RESEARCH_PROBLEM_recall:
+            leaderboard: *ALL
+            column_group: *RESEARCH_PROBLEM
+            label: R
+            rank: 3            
+        
+        # only approach triples
+        APPROACH_f1:
+            leaderboard: *ALL
+            column_group: *APPROACH
+            label: F1
+            rank: 1
+        APPROACH_precision:
+            leaderboard: *ALL
+            column_group: *APPROACH
+            label: P
+            rank: 2
+        APPROACH_recall:
+            leaderboard: *ALL
+            column_group: *APPROACH
+            label: R
+            rank: 3
+
+        # only model triples
+        MODEL_f1:
+            leaderboard: *ALL
+            column_group: *MODEL
+            label: F1
+            rank: 1
+        MODEL_precision:
+            leaderboard: *ALL
+            column_group: *MODEL
+            label: P
+            rank: 2
+        MODEL_recall:
+            leaderboard: *ALL
+            column_group: *MODEL
+            label: R
+            rank: 3
+
+        # only method triples
+        METHOD_f1:
+            leaderboard: *ALL
+            column_group: *METHOD
+            label: F1
+            rank: 1
+        METHOD_precision:
+            leaderboard: *ALL
+            column_group: *METHOD
+            label: P
+            rank: 2
+        METHOD_recall:
+            leaderboard: *ALL
+            column_group: *METHOD
+            label: R
+            rank: 3
+
+        # only architecture triples
+        ARCHITECTURE_f1:
+            leaderboard: *ALL
+            column_group: *ARCH
+            label: F1
+            rank: 1
+        ARCHITECTURE_precision:
+            leaderboard: *ALL
+            column_group: *ARCH
+            label: P
+            rank: 2
+        ARCHITECTURE_recall:
+            leaderboard: *ALL
+            column_group: *ARCH
+            label: R
+            rank: 3
+
+        # only system triples
+        SYSTEM_f1:
+            leaderboard: *ALL
+            column_group: *SYS
+            label: F1
+            rank: 1
+        SYSTEM_precision:
+            leaderboard: *ALL
+            column_group: *SYS
+            label: P
+            rank: 2
+        SYSTEM_recall:
+            leaderboard: *ALL
+            column_group: *SYS
+            label: R
+            rank: 3
+
+        # only application triples
+        APPLICATION_f1:
+            leaderboard: *ALL
+            column_group: *APP
+            label: F1
+            rank: 1
+        APPLICATION_precision:
+            leaderboard: *ALL
+            column_group: *APP
+            label: P
+            rank: 2
+        APPLICATION_recall:
+            leaderboard: *ALL
+            column_group: *APP
+            label: R
+            rank: 3
+            
+        # only objective triples    
+        OBJECTIVE_f1:
+            leaderboard: *ALL
+            column_group: *OBJ
+            label: F1
+            rank: 1
+        OBJECTIVE_precision:
+            leaderboard: *ALL
+            column_group: *OBJ
+            label: P
+            rank: 2
+        OBJECTIVE_recall:
+            leaderboard: *ALL
+            column_group: *OBJ
+            label: R
+            rank: 3
+        
+        # only experimental setup triples    
+        EXP_SETUP_f1:
+            leaderboard: *ALL
+            column_group: *EXP_SETUP
+            label: F1
+            rank: 1
+        EXP_SETUP_precision:
+            leaderboard: *ALL
+            column_group: *EXP_SETUP
+            label: P
+            rank: 2
+        EXP_SETUP_recall:
+            leaderboard: *ALL
+            column_group: *EXP_SETUP
+            label: R
+            rank: 3
+            
+        # only hyperparameter triples
+        HYP_PARAM_f1:
+            leaderboard: *ALL
+            column_group: *HYP_PARAM
+            label: F1
+            rank: 1
+        HYP_PARAM_precision:
+            leaderboard: *ALL
+            column_group: *HYP_PARAM
+            label: P
+            rank: 2
+        HYP_PARAM_recall:
+            leaderboard: *ALL
+            column_group: *HYP_PARAM
+            label: R
+            rank: 3        
+            
+        # only result triples
+        RES_f1:
+            leaderboard: *ALL
+            column_group: *RES
+            label: F1
+            rank: 1
+        RES_precision:
+            leaderboard: *ALL
+            column_group: *RES
+            label: P
+            rank: 2
+        RES_recall:
+            leaderboard: *ALL
+            column_group: *RES
+            label: R
+            rank: 3
+        
+        # only task triples
+        TASK_f1:
+            leaderboard: *ALL
+            column_group: *TASKS
+            label: F1
+            rank: 1
+        TASK_precision:
+            leaderboard: *ALL
+            column_group: *TASKS
+            label: P
+            rank: 2
+        TASK_recall:
+            leaderboard: *ALL
+            column_group: *TASKS
+            label: R
+            rank: 3
+
+        # only experiment triples
+        EXP_f1:
+            leaderboard: *ALL
+            column_group: *EXP
+            label: F1
+            rank: 1
+        EXP_precision:
+            leaderboard: *ALL
+            column_group: *EXP
+            label: P
+            rank: 2
+        EXP_recall:
+            leaderboard: *ALL
+            column_group: *EXP
+            label: R
+            rank: 3            
+            
+        # only ablation analysis triples
+        ABLATION_f1:
+            leaderboard: *ALL
+            column_group: *ABL_ANALYSIS
+            label: F1
+            rank: 1
+        ABLATION_precision:
+            leaderboard: *ALL
+            column_group: *ABL_ANALYSIS
+            label: P
+            rank: 2
+        ABLATION_recall:
+            leaderboard: *ALL
+            column_group: *ABL_ANALYSIS
+            label: R
+            rank: 3            
+            
+        # only baseline triples
+        BASELINES_f1:
+            leaderboard: *ALL
+            column_group: *BASELINES
+            label: F1
+            rank: 1
+        BASELINES_precision:
+            leaderboard: *ALL
+            column_group: *BASELINES
+            label: P
+            rank: 2
+        BASELINES_recall:
+            leaderboard: *ALL
+            column_group: *BASELINES
+            label: R
+            rank: 3             
+            

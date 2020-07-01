@@ -1,0 +1,18 @@
+<h3>Data Use Agreements</h3>
+<p>The annotated data is released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0 license</a>.</p>
+<h3 style="margin-top: 1em;">Releases of Source Text</h3>
+<p>Each scholarly article will be provided in plain text format preprocessed for sentence splitting and tokenization.</p>
+<h3 id="Releases-of-Annotations" style="margin-top: 1em;">Releases of Annotations</h3>
+<p>The annotations for the task will be released on the <a href="https://github.com/ncg-task" target="_blank">NLPContributionTask Github account</a>. The following releases are currently available:</p>
+<ul>
+<li><a href="https://github.com/ncg-task/NLPContributions" target="_blank">Trial data</a></li>
+</ul>
+<h3 style="margin-top: 1em;">Corpus Annotation</h3>
+<p>The NLPContributionTask comprises a corpus of scholarly articles in Natural Language Processing research focused on Machine Learning applications and was annotated as follows:</p>
+<ol>
+<li>The annotator identified contribution-related sentences, entities, and their triples</li>
+<li>In an adjudication phase, the annotations were revised as seen necessary</li>
+</ol>
+<p>The annotation methodology can be found described in the arxiv article <a href="https://arxiv.org/abs/2006.12870" target="_blank">here</a>.</p>
+<h3>Data Format</h3>
+<p>The NLPContribution data is in the following format. For the training and dev sets, for each annotated scholarly article in the corpus, there will be a directory. That directory will contain a plain text file which is the article's full text, preprocessed for tokenization and sentence splitting; and there will be three text files: <strong>Sentences.txt</strong> will contain the annotated contribution sentence numbers from the full-text file; <strong>Entity.txt</strong> will contain the sentence number, tab-separated from the start and end token numbers of the annotated entity in the sentence; and <strong>Triples.txt</strong> will contain the triples of the entity annotations, unless the predicates are inferred additionally, in which case they will be shown as strings. Samples of the annotations are released as <a href="https://github.com/ncg-task/NLPContributions" target="_blank">trial data</a>.</p>
