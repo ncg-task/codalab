@@ -1,2 +1,2 @@
-command: python $scoring_program/evaluate.py $input $output
-description: NLPContributionGraph evaluation program
+command: python $program/evaluation.py $input $output
+description: NLPContributionGraph Shared Task competition evaluation program.

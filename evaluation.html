@@ -1,20 +1,28 @@
-<p>Participants in NLPContributionGraph may participate in any or all of the 3 tasks (Sentence, Entity, Triples). The evaluation metrics that will be applied are:</p>
+<p>An NLPContributionGraph submission will be considered complete with predictions made for all 3 tasks (Sentence, Phrases, Triples). 
+The evaluation metrics that will be applied are:</p>
 <ul>
-<li>Sentence: precision, recall and F1</li>
-<li>Entity: precision, recall and F1</li>
-<li>Triples: precision, recall and F1 overall and for each attribute</li>
+<li>Sentences: precision, recall and F1</li>
+<li>Scientific Term and Predicate Phrases: precision, recall and F1</li>
+<li>Triples: precision, recall and F1 overall and for each information unit</li>
 </ul>
-<p>The focus of NLPContributionGraph is on shallow semantic structuring of the contributions in NLP scholarly articles to form a knowledge graph. To allow a thorough evaluation of systems, NLPContributionGraph will have multiple evaluation phases:</p>
+<p>The focus of NLPContributionGraph is on the structuring of contributions in NLP scholarly articles to form a knowledge graph. 
+To allow a thorough evaluation of systems, NLPContributionGraph will have multiple evaluation phases:</p>
 <ol>
 <li>Practice phase:
 <ul>
 <li>Training and dev data:
 <ul>
 <li>contribution sentences from NLP scholarly articles across different IE tasks (e.g., machine translation, named entity recognition, etc.)</li>
-<li>entities from the annotated contribution sentences</li>
-<li>triples from the entities under any of the fifteen information units listed below</li>
+<li>phrases from the annotated contribution sentences</li>
+<li>triples from the entities under any of the twelve information units listed below</li>
 <ul>
-<li><span style="font-variant: small-caps;">ResearchProblem</span>, <span style="font-variant: small-caps;">Approach</span>, <span style="font-variant: small-caps;">Model</span>, <span style="font-variant: small-caps;">Method</span>, <span style="font-variant: small-caps;">Architecture</span>, <span style="font-variant: small-caps;">System</span>, <span style="font-variant: small-caps;">Application</span>, <span style="font-variant: small-caps;">Objective</span>, <span style="font-variant: small-caps;">ExperimentalSetup</span>, <span style="font-variant: small-caps;">Hyperparameters</span>, <span style="font-variant: small-caps;">Results</span>, <span style="font-variant: small-caps;">Tasks</span>, <span style="font-variant: small-caps;">Experiments</span>, <span style="font-variant: small-caps;">AblationAnalysis</span>, and <span style="font-variant: small-caps;">Baselines</span></li>
+<li><font style="font-variant: small-caps">ResearchProblem</font>, 
+<font style="font-variant: small-caps">Approach</font>, <font style="font-variant: small-caps">Model</font>, 
+<font style="font-variant: small-caps">Code</font>, <font style="font-variant: small-caps">Dataset</font>, 
+<font style="font-variant: small-caps">ExperimentalSetup</font>, <font style="font-variant: small-caps">Hyperparameters</font>, 
+<font style="font-variant: small-caps">Baselines</font>, <font style="font-variant: small-caps">Results</font>, 
+<font style="font-variant: small-caps">Tasks</font>, <font style="font-variant: small-caps">Experiments</font>, 
+and <font style="font-variant: small-caps">AblationAnalysis</font></li>
 </ul>
 </ul>
 </li>
@@ -25,7 +33,7 @@
 </li>
 </ul>
 </li>
-<li>End-to-end pipeline testing phase:
+<li><code>Evaluation Phase 1: End-to-end pipeline testing phase</code>
 <ul>
 <li>Training and dev data:</li>
 <ul>
@@ -39,7 +47,10 @@
 </li>
 </ul>
 </li>
-<li>Entity and Schema extraction testing phase:<br /> This phase will have two parts: In part 1, the participant systems will be given the gold annotated sentences and will be expected to provide purely their entity extraction output; In part 2, the participant systems will be given the gold entities and will be expected to provide their system output just for triples.
+<li><code>Evaluation Phase 2: Phrases and Triples extraction testing phase</code><br /> 
+This phase will have two parts: In <code>Part 1: Phrase Extraction Testing</code>, the participant systems will be given the gold-annotated contribution sentences 
+and will be expected to provide purely their scientific term and predicate phrase extraction output; 
+In <code>Part 2: Triples Extraction Testing</code>, the participant systems will be given the gold phrases and will be expected to provide their system output just for triples.
 <ul>
 <li>Training data:
 <ul>
@@ -48,37 +59,33 @@
 </li>
 <li>Test data:
 <ul>
-<li>Part 1: Gold annotated contribution sentences</li>
-<li>Part 2: Gold annotated entities from the contribution sentences</li>
+<li>Part 1: Gold annotated contribution sentences will be released</li>
+<li>Part 2: Gold annotated phrases from the contribution sentences</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<h3>System Output Format</h3>
-<p>Based on the subtask, the format of submissions is the same for both phase 1 and phase 2. Regardless of the train, dev, or test datasets, the participants will be provided the articles in plain text format and lightly preprocessed in terms of sentence splits and tokenization. For the <strong>Sentence</strong> task, sentence numbers, with a start counter at 1, will be the input data to participating systems and are expected to produce their predictions similarly. For the <strong>Entity</strong> task, the first and last token numbers, where tokens also have a start counter of 1 for each sentence, will be the input and expected output from participants. And finally, for the <strong>Triples</strong> task, triples of the entities as their token numbers, thus six numbers per line, will be the input data and expected output data from the participant systems. The submission directory structure should look like:</p>
-<ul>
-<li>ArticleID01
-<ul>
-<li>Sentence.txt</li>
-<li>Entity.txt</li>
-<li>Triples.txt</li>
-</ul>
-</li>
-<li>ArticleID02<br />
-<ul>
-<li>Sentence.txt</li>
-<li>Entity.txt</li>
-<li>Triples.txt</li>
-</ul>
-</li>
-<li>ArticleID03<br />
-<ul>
-<li>Sentence.txt</li>
-<li>Entity.txt</li>
-<li>Triples.txt</li>
-</ul>
-</li>
-<li>...</li>
-</ul>
+<h3>Evaluation Metrics</h3>
+The evaluation metrics in the Evaluation Phases 1 and 2 will be the standard Precision, Recall, and F-score measures. 
+Details of the evaluation units can be found in our <a href="https://github.com/ncg-task/scoring-program/blob/master/evaluation.py" target="_blank">evaluation script</a> or in our <a href="" target="_blank">Codalab competition configuration yaml file</a>.
+
+<h3>Evaluation Submission Format</h3>
+
+The submission will have be organized per the following directory structure:
+
+<pre><code>
+    [task-name-folder]/
+        ├── [article-counter-folder]/
+        │   ├── sentences.txt
+        │   └── entities.txt
+        │   └── triples/
+        │   │   └── research-problem.txt
+        │   │   └── model.txt
+        │   │   └── ...                         # each article may be annotated by 3 or 6 information units
+        │   └── ...                             # repeats for all articles annotated in a release
+        └── ...                                 # repeats depending on the number of tasks in the release
+</code></pre>
+
+<p>Please see our Github repository <a href="https://github.com/ncg-task/sample-submission" target="_blank">https://github.com/ncg-task/sample-submission</a> for detailed information and for sample data.</p>
 <p>&nbsp;</p>
