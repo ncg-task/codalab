@@ -1,6 +1,6 @@
-title: "SemEval 2021 Task 11: NLPContributionGraph Dummy Version 2 with Admin and New Docker Image for Evaluation Script"
+title: "SemEval 2021 Task 11: NLPContributionGraph"
 
-description: Testing 1,2,3 A task for structuring the "contributions" information from scholarly articles to facilitate contributions-centered scientific knowledge graph building.
+description: Structuring the "contributions" information from scholarly articles to facilitate contributions-centered scientific knowledge graph building.
 
 html:
     overview: overview.html
@@ -20,9 +20,9 @@ phases:
         phasenumber: 1
         label: "Practice"
         color: "yellow"
-        start_date: 2020-07-26
+        start_date: 2020-08-16
         phase_never_ends: False
-        max_submissions_per_day: 100
+        max_submissions_per_day: 10
         max_submissions: 9999
         scoring_program: scoring_program.zip
         reference_data: dev_data.zip
@@ -84,9 +84,9 @@ leaderboard:
             label: Rank
         Sentences: &SENT
             label: Sentences
-        Entities span only: &ENT_SPAN
-            label: Entities span only
-        Only information units: &IU
+        Phrases span only: &PHR_SPAN
+            label: Phrases span only
+        Information units only: &IU
             label: Information units
         Triples + all units: &TRIPLES_FULL
             label: Triples + all units
@@ -146,22 +146,22 @@ leaderboard:
             numeric_format: 4            
             rank: 5
             
-        # entities
-        ENT_SPAN_f1:
+        # phrases
+        PHR_SPAN_f1:
             leaderboard: *ALL
-            column_group: *ENT_SPAN
+            column_group: *PHR_SPAN
             label: F1
             numeric_format: 4            
             rank: 3
-        ENT_SPAN_precision:
+        PHR_SPAN_precision:
             leaderboard: *ALL
-            column_group: *ENT_SPAN
+            column_group: *PHR_SPAN
             label: P
             numeric_format: 4            
             rank: 4
-        ENT_SPAN_recall:
+        PHR_SPAN_recall:
             leaderboard: *ALL
-            column_group: *ENT_SPAN
+            column_group: *PHR_SPAN
             label: R
             numeric_format: 4            
             rank: 5
