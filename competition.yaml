@@ -20,7 +20,7 @@ phases:
         phasenumber: 1
         label: "Practice"
         color: "yellow"
-        start_date: 2020-07-26
+        start_date: 2020-08-16
         phase_never_ends: False
         max_submissions_per_day: 10
         max_submissions: 9999
